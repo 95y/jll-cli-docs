@@ -42,7 +42,7 @@ console.log('globalRes', globalRes);
 #### 批量获取全局变量
 | 参数 | 类型 | 说明 |
 | --- | --- | --- |
-| paramList | Array | 批量初始化的数据 |
+| paramList | Array | 批量查询的数据bizFields |
 ``` javascript
 /**
  * 批量获取全局变量 
