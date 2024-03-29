@@ -38,6 +38,25 @@ const globalRes = await jll.batchInitGlobal(paramList)
 console.log('globalRes', globalRes);
 ```
 
+## batchGetGlobal(paramList)
+#### 批量获取全局变量
+| 参数 | 类型 | 说明 |
+| --- | --- | --- |
+| paramList | Array | 批量初始化的数据 |
+``` javascript
+/**
+ * 批量获取全局变量 
+ * 批量获取多个bizFields的数据
+ * @param paramList: 批量获取的数据
+ **/
+const paramList = [
+	{bizFields: 'Global_1'},
+	{bizFields: 'Global_2'},
+]
+const globalRes = await jll.batchGetGlobal(paramList)
+console.log('globalRes', globalRes);
+```
+
 ## batchGlobal(paramList)
 #### 批量修改全局变量
 | 参数 | 类型 | 说明 |
