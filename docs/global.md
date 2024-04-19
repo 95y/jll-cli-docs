@@ -76,6 +76,49 @@ const globalRes = await jll.batchGlobal(paramList)
 console.log('globalRes', globalRes);
 ```
 
+## batchIntGlobal(bizFields, intParamList, stringParams)
+#### 批量修改全局变量 含int争抢，局限于同一个bizFields
+| 参数 | 类型 | 说明 |
+| --- | --- | --- |
+| bizFields | String | bizFields字段 |
+| intParamList | Array | 自增自减的数据 |
+| stringParams | Array | 需要修改的数据 |
+
+`intParamList[Object] 参数字段`
+| 参数 | 类型 | 说明 |
+| --- | --- | --- |
+| bizContentKey | String | biz属性描述 |
+| value | int | 加减的值 |
+| type | int | 1.加法 2.减法 |
+| limitValue | int | 阈值(上限、下限) |
+
+`stringParams[Object] 参数字段`
+| 参数 | 类型 | 说明 |
+| --- | --- | --- |
+| bizContentKey | String | biz属性描述 |
+| bizContentValue | String | biz属性值 |
+``` javascript
+/**
+ * 含自增自减
+ * 批量修改全局变量 
+ * 批量修改多个bizFields的数据
+ * 假设 bizFields 为 Global_Data
+ * {
+ * 	num: 2,
+ * 	roleName: '旧值'	
+ * }
+ **/
+const bizFields = 'Global_Data'
+const intParamList = [
+	{bizContentKey: 'num', value: 1, type: 2, limitValue: 0}
+]
+const stringParams = [
+	{bizContentKey: 'roleName', bizContentValue: '新值'}
+]
+const globalRes = await jll.batchIntGlobal(bizFields, intParamList, stringParams)
+console.log('globalRes', globalRes);
+```
+
 ## getGlobalData(bizFields)
 #### 获取全局自定义变量
 | 参数 | 类型 | 说明 |
