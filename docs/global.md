@@ -38,6 +38,25 @@ const globalRes = await jll.batchInitGlobal(paramList)
 console.log('globalRes', globalRes);
 ```
 
+## batchSetGlobalValue(bizFields, paramList)
+#### 批量setValue
+| 参数 | 类型 | 说明 |
+| --- | --- | --- |
+| bizFields | String | 业务key |
+| paramList | Array | 批量修改的数据 |
+``` javascript
+/**
+ * 批量修改多个value
+ * 批量修改多个value
+ * @param bizFields: 业务key
+ * @param paramList: 批量修改的数据
+ **/
+const bizFields = 'Test_Global'
+const paramList = [{bizContentKey, bizContentValue}]
+const globalRes = await jll.batchSetGlobalValue(bizFields, paramList)
+console.log('globalRes', globalRes);
+```
+
 ## batchGetGlobal(paramList)
 #### 批量获取全局变量
 | 参数 | 类型 | 说明 |
